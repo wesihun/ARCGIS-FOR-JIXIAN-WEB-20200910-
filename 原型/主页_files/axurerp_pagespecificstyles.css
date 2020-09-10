@@ -1,0 +1,144 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../主页_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1920px;
+    height:1249px;
+}
+
+#u0_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1920px;
+    height:1249px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:616px;
+    width:1916px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u2 {
+    position:absolute;
+    left:660px;
+    top:672px;
+    width:260px;
+    height:84px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+#u3 {
+    position:absolute;
+    left:352px;
+    top:672px;
+    width:260px;
+    height:84px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+#u4 {
+    position:absolute;
+    left:950px;
+    top:672px;
+    width:260px;
+    height:84px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+#u5 {
+    position:absolute;
+    left:1248px;
+    top:672px;
+    width:260px;
+    height:84px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+.u6_normal {
+    background-image: url('../主页_files/u6_normal.png');
+}
+
+.u6_container {
+    position:absolute;
+    left:1636px;
+    top:33px;
+    width:94px;
+    height:29px;
+}
+
+#u6_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:94px;
+    height:29px;
+}
+
+.u7 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:90px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
