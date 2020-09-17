@@ -58,7 +58,6 @@ public class MyController {
         User user = (User) session.getAttribute("user");
 
         List<User> listUser = myMapper.getUserInfo(user);
-
         return listUser;
     }
 
@@ -449,6 +448,29 @@ public class MyController {
 
         return tb_dltb;
     }
+
+    @RequestMapping(value = "getAllDLTBServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_DLTB> getAllDLTBServiceVersion() {//取得所有地类图斑服务版本日期
+
+        List<TB_DLTB> tb_dltbList = myMapper.getAllDLTBServiceVersion();
+
+        return tb_dltbList;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

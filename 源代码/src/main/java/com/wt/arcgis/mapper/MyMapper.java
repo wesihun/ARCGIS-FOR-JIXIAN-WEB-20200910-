@@ -85,6 +85,9 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_dltb where run=1 and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_DLTB getDLTBServiceByUpdatetime(@Param("argupdatetime")String updatetime);//根据更新时间取得地类图斑服务
 
+    @Select("select distinct updatetime from tb_dltb;")
+    public List<TB_DLTB> getAllDLTBServiceVersion();//取得所有地类图斑服务版本日期
+
 
 
 

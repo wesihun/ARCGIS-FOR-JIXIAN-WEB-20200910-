@@ -7,13 +7,12 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
 @Configuration
 public class FilterClass{
+
     @Bean
     public FilterRegistrationBean testFilterRegistration(){
         FilterRegistrationBean registration = new FilterRegistrationBean();
@@ -24,6 +23,7 @@ public class FilterClass{
         registration.setOrder(1);
         return registration;
     }
+
 }
 
 class MyFilter implements Filter{
@@ -32,7 +32,6 @@ class MyFilter implements Filter{
         HttpServletRequest request = (HttpServletRequest)servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession();
-
 
         String url = request.getRequestURI();
         String path = request.getContextPath();
@@ -43,7 +42,6 @@ class MyFilter implements Filter{
             filterChain.doFilter(servletRequest,servletResponse);//放行
             return;
         }
-
 
         if(null == session.getAttribute("user")){
             String json = "{" + '"' + "result" + '"' + ":" + '"' + "error" + '"' + "}";
@@ -66,4 +64,12 @@ class MyFilter implements Filter{
     @Override
     public void init(FilterConfig filterConfig) throws ServletException{
     }
+
+
 }
+
+
+
+
+
+
