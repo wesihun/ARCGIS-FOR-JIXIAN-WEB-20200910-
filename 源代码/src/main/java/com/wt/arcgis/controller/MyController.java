@@ -434,25 +434,25 @@ public class MyController {
 
 
     @RequestMapping(value = "getLastUpdateDLTBService", produces = "application/json;charset=utf-8")
-    public TB_DLTB getLastUpdateDLTBService() {//取得最有一次更新的地类图斑服务
-        TB_DLTB tb_dltb = myMapper.getLastUpdateDLTBService();
+    public TB_DLTB getLastUpdateDLTBService(int type) {//取得最后一次更新的地类图斑服务
+        TB_DLTB tb_dltb = myMapper.getLastUpdateDLTBService(type);
 
         return tb_dltb;
     }
 
     @RequestMapping(value = "getDLTBServiceByUpdatetime", produces = "application/json;charset=utf-8")
-    public TB_DLTB getDLTBServiceByUpdatetime(String updatetime) {//根据更新时间取得地类图斑服务
+    public TB_DLTB getDLTBServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
         if(null==updatetime || "".equals(updatetime)) return null;
 
-        TB_DLTB tb_dltb = myMapper.getDLTBServiceByUpdatetime(updatetime);
+        TB_DLTB tb_dltb = myMapper.getDLTBServiceByUpdatetime(updatetime, type);
 
         return tb_dltb;
     }
 
     @RequestMapping(value = "getAllDLTBServiceVersion", produces = "application/json;charset=utf-8")
-    public List<TB_DLTB> getAllDLTBServiceVersion() {//取得所有地类图斑服务版本日期
+    public List<TB_DLTB> getAllDLTBServiceVersion(int type) {//取得所有地类图斑服务版本日期
 
-        List<TB_DLTB> tb_dltbList = myMapper.getAllDLTBServiceVersion();
+        List<TB_DLTB> tb_dltbList = myMapper.getAllDLTBServiceVersion(type);
 
         return tb_dltbList;
     }

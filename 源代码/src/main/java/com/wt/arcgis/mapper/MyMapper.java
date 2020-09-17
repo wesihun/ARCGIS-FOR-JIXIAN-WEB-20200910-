@@ -79,14 +79,14 @@ public interface MyMapper
 
 
 
-    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_dltb where run=1 order by updatetime desc limit 0,1 ;")
-    public TB_DLTB getLastUpdateDLTBService();//取得最后一次更新的地类图斑服务
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_dltb where run=1 and type=${type} order by updatetime desc limit 0,1 ;")
+    public TB_DLTB getLastUpdateDLTBService( @Param("type")int type);//取得最后一次更新的地类图斑服务(0动态地图，1要素，2影像)
 
-    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_dltb where run=1 and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
-    public TB_DLTB getDLTBServiceByUpdatetime(@Param("argupdatetime")String updatetime);//根据更新时间取得地类图斑服务
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_dltb where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
+    public TB_DLTB getDLTBServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得地类图斑服务
 
-    @Select("select distinct updatetime from tb_dltb;")
-    public List<TB_DLTB> getAllDLTBServiceVersion();//取得所有地类图斑服务版本日期
+    @Select("select distinct updatetime from tb_dltb where type=${type};")
+    public List<TB_DLTB> getAllDLTBServiceVersion( @Param("type")int type);//取得所有地类图斑服务版本日期
 
 
 
