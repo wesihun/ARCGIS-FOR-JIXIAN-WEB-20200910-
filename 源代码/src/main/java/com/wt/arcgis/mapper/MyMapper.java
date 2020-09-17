@@ -89,6 +89,13 @@ public interface MyMapper
     public List<TB_DLTB> getAllDLTBServiceVersion( @Param("type")int type);//取得所有地类图斑服务版本日期
 
 
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_xzq where run=1 and type=${type} order by updatetime desc limit 0,1 ;")
+    public TB_XZQ getLastUpdateXZQService( @Param("type")int type);//取得最后一次更新的行政区服务根据服务类型(0动态地图，1要素，2影像，5000 1：5000缩放隐藏)
 
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_xzq where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
+    public TB_XZQ getXZQServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间，服务类型取得行政区服务
+
+    @Select("select distinct updatetime from tb_xzq where run=1 and type=${type};")
+    public List<TB_XZQ> getAllXZQServiceVersion( @Param("type")int type);//根据服务类型取得所有行政区服务版本日期
 
 }

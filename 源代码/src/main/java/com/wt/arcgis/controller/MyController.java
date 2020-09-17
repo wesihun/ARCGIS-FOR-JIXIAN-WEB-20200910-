@@ -436,7 +436,6 @@ public class MyController {
     @RequestMapping(value = "getLastUpdateDLTBService", produces = "application/json;charset=utf-8")
     public TB_DLTB getLastUpdateDLTBService(int type) {//取得最后一次更新的地类图斑服务
         TB_DLTB tb_dltb = myMapper.getLastUpdateDLTBService(type);
-
         return tb_dltb;
     }
 
@@ -445,18 +444,34 @@ public class MyController {
         if(null==updatetime || "".equals(updatetime)) return null;
 
         TB_DLTB tb_dltb = myMapper.getDLTBServiceByUpdatetime(updatetime, type);
-
         return tb_dltb;
     }
 
     @RequestMapping(value = "getAllDLTBServiceVersion", produces = "application/json;charset=utf-8")
     public List<TB_DLTB> getAllDLTBServiceVersion(int type) {//取得所有地类图斑服务版本日期
-
         List<TB_DLTB> tb_dltbList = myMapper.getAllDLTBServiceVersion(type);
-
         return tb_dltbList;
     }
 
+    @RequestMapping(value = "getLastUpdateXZQService", produces = "application/json;charset=utf-8")
+    public TB_XZQ getLastUpdateXZQService(int type) {//取得最后一次更新的地类图斑服务
+        TB_XZQ tb_xzq = myMapper.getLastUpdateXZQService(type);
+        return tb_xzq;
+    }
+
+    @RequestMapping(value = "getXZQServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_XZQ getXZQServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_XZQ tb_xzq = myMapper.getXZQServiceByUpdatetime(updatetime, type);
+        return tb_xzq;
+    }
+
+    @RequestMapping(value = "getAllXZQServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_XZQ> getAllXZQServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_XZQ> tb_xzqList = myMapper.getAllXZQServiceVersion(type);
+        return tb_xzqList;
+    }
 
 
 

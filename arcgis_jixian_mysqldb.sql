@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/9/8 15:46:44                            */
+/* Created on:     2020/9/17 15:58:35                           */
 /*==============================================================*/
 
 
@@ -43,6 +43,8 @@ drop table if exists tb_special_now_update;
 drop table if exists tb_user;
 
 drop table if exists tb_user_role;
+
+drop table if exists tb_xzq;
 
 /*==============================================================*/
 /* Table: tb_analysis_data                                      */
@@ -307,6 +309,23 @@ create table tb_user_role
    id                   int not null auto_increment,
    roleid               int,
    userid               int,
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: tb_xzq                                                */
+/*==============================================================*/
+create table tb_xzq
+(
+   id                   int not null auto_increment,
+   servicename          varchar(50),
+   serviceaddr          varchar(300),
+   databasename         varchar(50),
+   tablename            varchar(50),
+   type                 int,
+   updatetime           date,
+   run                  int,
+   createtime           datetime,
    primary key (id)
 );
 
