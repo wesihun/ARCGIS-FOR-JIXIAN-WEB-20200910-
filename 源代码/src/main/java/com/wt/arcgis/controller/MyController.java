@@ -474,7 +474,25 @@ public class MyController {
     }
 
 
+    @RequestMapping(value = "getAllRunImageLayerService", produces = "application/json;charset=utf-8")
+    public List<TB_IMAGELAYER> getAllRunImageLayerService(int type) {//取得所有启用影像服务根据服务类型(0动态地图，1要素，2影像，5000 1：5000缩放隐藏)
+        List<TB_IMAGELAYER> tb_imagelayerList = myMapper.getAllRunImageLayerService(type);
+        return tb_imagelayerList;
+    }
 
+    @RequestMapping(value = "getAllRunImageLayerByUpdatetime", produces = "application/json;charset=utf-8")
+    public List<TB_IMAGELAYER> getAllRunImageLayerByUpdatetime(String updatetime, int type) {//根据更新时间，服务类型取得全部启用影像服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        List<TB_IMAGELAYER> tb_imagelayerList = myMapper.getAllRunImageLayerByUpdatetime(updatetime, type);
+        return tb_imagelayerList;
+    }
+
+    @RequestMapping(value = "getAllRunImageLayerServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_IMAGELAYER> getAllRunImageLayerServiceVersion(int type) {//根据服务类型取得所有启用影像服务版本日期
+        List<TB_IMAGELAYER> tb_imagelayerList = myMapper.getAllRunImageLayerServiceVersion(type);
+        return tb_imagelayerList;
+    }
 
 
 

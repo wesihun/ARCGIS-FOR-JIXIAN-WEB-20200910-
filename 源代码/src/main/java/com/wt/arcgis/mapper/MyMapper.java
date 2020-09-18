@@ -98,4 +98,15 @@ public interface MyMapper
     @Select("select distinct updatetime from tb_xzq where run=1 and type=${type};")
     public List<TB_XZQ> getAllXZQServiceVersion( @Param("type")int type);//根据服务类型取得所有行政区服务版本日期
 
+
+
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_imagelayer where run=1 and type=${type} ;")
+    public List<TB_IMAGELAYER> getAllRunImageLayerService( @Param("type")int type);//取得所有启用影像服务根据服务类型(0动态地图，1要素，2影像，5000 1：5000缩放隐藏)
+
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_imagelayer where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime};")
+    public List<TB_IMAGELAYER>  getAllRunImageLayerByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间，服务类型取得全部启用影像服务
+
+    @Select("select distinct updatetime from tb_imagelayer where run=1 and type=${type};")
+    public List<TB_IMAGELAYER>  getAllRunImageLayerServiceVersion( @Param("type")int type);//根据服务类型取得所有启用影像服务版本日期
+
 }

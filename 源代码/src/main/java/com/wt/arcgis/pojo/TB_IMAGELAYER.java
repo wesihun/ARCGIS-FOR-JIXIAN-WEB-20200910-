@@ -2,7 +2,7 @@ package com.wt.arcgis.pojo;
 
 import java.util.Date;
 
-public class TB_XZQ {//行政区表（记录服务更新的版本和地址以TB_开头的都是）
+public class TB_IMAGELAYER {//影像表（记录服务更新的版本和地址以TB_开头的都是）
     private int id;
     private String serviceaddr;
     private String databasename;

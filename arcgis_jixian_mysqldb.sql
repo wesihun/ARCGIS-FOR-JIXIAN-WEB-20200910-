@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/9/17 15:58:35                           */
+/* Created on:     2020/9/18 10:36:06                           */
 /*==============================================================*/
 
 
@@ -15,6 +15,8 @@ drop table if exists tb_banner;
 drop table if exists tb_department;
 
 drop table if exists tb_dltb;
+
+drop table if exists tb_imagelayer;
 
 drop table if exists tb_log;
 
@@ -114,6 +116,23 @@ create table tb_department
 /* Table: tb_dltb                                               */
 /*==============================================================*/
 create table tb_dltb
+(
+   id                   int not null auto_increment,
+   servicename          varchar(50),
+   serviceaddr          varchar(300),
+   databasename         varchar(50),
+   tablename            varchar(50),
+   type                 int,
+   updatetime           date,
+   run                  int,
+   createtime           datetime,
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: tb_imagelayer                                         */
+/*==============================================================*/
+create table tb_imagelayer
 (
    id                   int not null auto_increment,
    servicename          varchar(50),
