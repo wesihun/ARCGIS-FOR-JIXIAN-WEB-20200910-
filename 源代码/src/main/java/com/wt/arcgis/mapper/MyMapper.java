@@ -100,8 +100,8 @@ public interface MyMapper
 
 
 
-    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_imagelayer where run=1 and type=${type} ;")
-    public List<TB_IMAGELAYER> getAllRunImageLayerService( @Param("type")int type);//取得所有启用影像服务根据服务类型(0动态地图，1要素，2影像，5000 1：5000缩放隐藏)
+    @Select("select * from tb_imagelayer where date_format(updatetime, '%Y-%m-%d' )=(select distinct date_format(updatetime, '%Y-%m-%d' )updatetime from tb_imagelayer where run=1 and type=${type} order by updatetime desc limit 0,1);")
+    public List<TB_IMAGELAYER> getAllRunImageLayerService( @Param("type")int type);//取得最有一次更新所有启用影像服务根据服务类型(0动态地图，1要素，2影像，5000 1：5000缩放隐藏)
 
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_imagelayer where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime};")
     public List<TB_IMAGELAYER>  getAllRunImageLayerByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间，服务类型取得全部启用影像服务

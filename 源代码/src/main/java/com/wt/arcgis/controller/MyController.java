@@ -475,7 +475,7 @@ public class MyController {
 
 
     @RequestMapping(value = "getAllRunImageLayerService", produces = "application/json;charset=utf-8")
-    public List<TB_IMAGELAYER> getAllRunImageLayerService(int type) {//取得所有启用影像服务根据服务类型(0动态地图，1要素，2影像，5000 1：5000缩放隐藏)
+    public List<TB_IMAGELAYER> getAllRunImageLayerService(int type) {//取得最有一次更新所有启用影像服务根据服务类型(0动态地图，1要素，2影像，5000 1：5000缩放隐藏)
         List<TB_IMAGELAYER> tb_imagelayerList = myMapper.getAllRunImageLayerService(type);
         return tb_imagelayerList;
     }
