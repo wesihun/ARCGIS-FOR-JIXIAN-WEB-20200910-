@@ -454,13 +454,13 @@ public class MyController {
     }
 
     @RequestMapping(value = "getLastUpdateXZQService", produces = "application/json;charset=utf-8")
-    public TB_XZQ getLastUpdateXZQService(int type) {//取得最后一次更新的地类图斑服务
+    public TB_XZQ getLastUpdateXZQService(int type) {//取得最后一次更新的行政区服务
         TB_XZQ tb_xzq = myMapper.getLastUpdateXZQService(type);
         return tb_xzq;
     }
 
     @RequestMapping(value = "getXZQServiceByUpdatetime", produces = "application/json;charset=utf-8")
-    public TB_XZQ getXZQServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+    public TB_XZQ getXZQServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得行政区服务
         if(null==updatetime || "".equals(updatetime)) return null;
 
         TB_XZQ tb_xzq = myMapper.getXZQServiceByUpdatetime(updatetime, type);
@@ -468,7 +468,7 @@ public class MyController {
     }
 
     @RequestMapping(value = "getAllXZQServiceVersion", produces = "application/json;charset=utf-8")
-    public List<TB_XZQ> getAllXZQServiceVersion(int type) {//取得所有地类图斑服务版本日期
+    public List<TB_XZQ> getAllXZQServiceVersion(int type) {//取得所有行政区服务版本日期
         List<TB_XZQ> tb_xzqList = myMapper.getAllXZQServiceVersion(type);
         return tb_xzqList;
     }
