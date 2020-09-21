@@ -85,7 +85,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_dltb where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_DLTB getDLTBServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得地类图斑服务
 
-    @Select("select distinct updatetime from tb_dltb where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_dltb where run=1 and type=${type};")
     public List<TB_DLTB> getAllDLTBServiceVersion( @Param("type")int type);//取得所有地类图斑服务版本日期
 
 
@@ -96,7 +96,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_xzq where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_XZQ getXZQServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间，服务类型取得行政区服务
 
-    @Select("select distinct updatetime from tb_xzq where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_xzq where run=1 and type=${type};")
     public List<TB_XZQ> getAllXZQServiceVersion( @Param("type")int type);//根据服务类型取得所有行政区服务版本日期
 
 
@@ -107,7 +107,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_imagelayer where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime};")
     public List<TB_IMAGELAYER>  getAllRunImageLayerByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间，服务类型取得全部启用影像服务
 
-    @Select("select distinct updatetime from tb_imagelayer where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_imagelayer where run=1 and type=${type};")
     public List<TB_IMAGELAYER>  getAllRunImageLayerServiceVersion( @Param("type")int type);//根据服务类型取得所有启用影像服务版本日期
 
 
@@ -118,7 +118,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_ccwjq where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_CCWJQ getCCWJQServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得拆除未尽区服务
 
-    @Select("select distinct updatetime from tb_ccwjq where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_ccwjq where run=1 and type=${type};")
     public List<TB_CCWJQ> getAllCCWJQServiceVersion( @Param("type")int type);//取得所有拆除未尽区服务版本日期
 
 
@@ -129,7 +129,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_czcdyd where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_CZCDYD getCZCDYDServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得城镇村等用地服务
 
-    @Select("select distinct updatetime from tb_czcdyd where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_czcdyd where run=1 and type=${type};")
     public List<TB_CZCDYD> getAllCZCDYDServiceVersion( @Param("type")int type);//取得所有拆城镇村等用地服务版本日期
 
 
@@ -140,7 +140,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_cjdcqjx where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_CJDCQJX getCJDCQJXServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得村籍调查区界线服务
 
-    @Select("select distinct updatetime from tb_cjdcqjx where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_cjdcqjx where run=1 and type=${type};")
     public List<TB_CJDCQJX> getAllCJDCQJXServiceVersion( @Param("type")int type);//取得所有村籍调查区界线服务版本日期
 
 
@@ -151,7 +151,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_gjgy where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_GJGY getGJGYServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得国家公园服务
 
-    @Select("select distinct updatetime from tb_gjgy where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_gjgy where run=1 and type=${type};")
     public List<TB_GJGY> getAllGJGYServiceVersion( @Param("type")int type);//取得所有国家公园服务版本日期
 
 
@@ -162,7 +162,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_kfyq where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_KFYQ getKFYQServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得开发园区服务
 
-    @Select("select distinct updatetime from tb_kfyq where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_kfyq where run=1 and type=${type};")
     public List<TB_KFYQ> getAllKFYQServiceVersion( @Param("type")int type);//取得所有开发园区服务版本日期
 
 
@@ -173,7 +173,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_lsyd where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_LSYD getLSYDServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得临时用地服务
 
-    @Select("select distinct updatetime from tb_lsyd where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_lsyd where run=1 and type=${type};")
     public List<TB_LSYD> getAllLSYDServiceVersion( @Param("type")int type);//取得所有临时用地服务版本日期
 
 
@@ -184,7 +184,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_pdt where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_PDT getPDTServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得坡度图服务
 
-    @Select("select distinct updatetime from tb_pdt where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_pdt where run=1 and type=${type};")
     public List<TB_PDT> getAllPDTServiceVersion( @Param("type")int type);//取得所有坡度图服务版本日期
 
 
@@ -195,7 +195,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_pdt where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_SDGY getSDGYServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得湿地公园服务
 
-    @Select("select distinct updatetime from tb_pdt where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_pdt where run=1 and type=${type};")
     public List<TB_SDGY> getAllSDGYServiceVersion( @Param("type")int type);//取得所有湿地公园服务版本日期
 
 
@@ -206,7 +206,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_sdgy where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_SLGY getSLGYServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得森林公园服务
 
-    @Select("select distinct updatetime from tb_sdgy where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_sdgy where run=1 and type=${type};")
     public List<TB_SLGY> getAllSLGYServiceVersion( @Param("type")int type);//取得所有森林公园服务版本日期
 
 
@@ -217,7 +217,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_stbhhx where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_STBHHX getSTBHHXServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得生态保护红线服务
 
-    @Select("select distinct updatetime from tb_stbhhx where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_stbhhx where run=1 and type=${type};")
     public List<TB_STBHHX> getAllSTBHHXServiceVersion( @Param("type")int type);//取得所有生态保护红线服务版本日期
 
 
@@ -228,7 +228,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_ttq where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_TTQ getTTQServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得推土区服务
 
-    @Select("select distinct updatetime from tb_ttq where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_ttq where run=1 and type=${type};")
     public List<TB_TTQ> getAllTTQServiceVersion( @Param("type")int type);//取得所有推土区服务版本日期
 
 
@@ -239,7 +239,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_xzqjx where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_XZQJX getXZQJXServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得行政区界线服务
 
-    @Select("select distinct updatetime from tb_xzqjx where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_xzqjx where run=1 and type=${type};")
     public List<TB_XZQJX> getAllXZQJXServiceVersion( @Param("type")int type);//取得所有行政区界线服务版本日期
 
 
@@ -250,7 +250,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_yjjbnt where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_YJJBNT getYJJBNTServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得永久基本农田服务
 
-    @Select("select distinct updatetime from tb_yjjbnt where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_yjjbnt where run=1 and type=${type};")
     public List<TB_YJJBNT> getAllYJJBNTServiceVersion( @Param("type")int type);//取得所有永久基本农田服务版本日期
 
 
@@ -261,7 +261,7 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from tb_yjjbnt where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
     public TB_ZRBHQ getZRBHQServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type);//根据更新时间取得自然保护区服务
 
-    @Select("select distinct updatetime from tb_yjjbnt where run=1 and type=${type};")
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from tb_yjjbnt where run=1 and type=${type};")
     public List<TB_ZRBHQ> getAllZRBHQServiceVersion( @Param("type")int type);//取得所有自然保护区服务版本日期
 
 }

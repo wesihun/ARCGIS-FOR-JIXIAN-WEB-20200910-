@@ -501,7 +501,298 @@ public class MyController {
 
 
 
+    @RequestMapping(value = "getLastUpdateCCWJQService", produces = "application/json;charset=utf-8")
+    public TB_CCWJQ getLastUpdateCCWJQService(int type) {//取得最后一次更新的地类图斑服务
+        TB_CCWJQ tb_ccwjq = myMapper.getLastUpdateCCWJQService(type);
+        return tb_ccwjq;
+    }
 
+    @RequestMapping(value = "getCCWJQServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_CCWJQ getCCWJQServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_CCWJQ tb_ccwjq = myMapper.getCCWJQServiceByUpdatetime(updatetime, type);
+        return tb_ccwjq;
+    }
+
+    @RequestMapping(value = "getAllCCWJQServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_CCWJQ> getAllCCWJQServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_CCWJQ> tb_ccwjqList = myMapper.getAllCCWJQServiceVersion(type);
+        return tb_ccwjqList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateCZCDYDService", produces = "application/json;charset=utf-8")
+    public TB_CZCDYD getLastUpdateCZCDYDService(int type) {//取得最后一次更新的地类图斑服务
+        TB_CZCDYD tb_czcdyd = myMapper.getLastUpdateCZCDYDService(type);
+        return tb_czcdyd;
+    }
+
+    @RequestMapping(value = "getCZCDYDServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_CZCDYD getCZCDYDServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_CZCDYD tb_czcdyd = myMapper.getCZCDYDServiceByUpdatetime(updatetime, type);
+        return tb_czcdyd;
+    }
+
+    @RequestMapping(value = "getAllCZCDYDServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_CZCDYD> getAllCZCDYDServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_CZCDYD> tb_czcdydList = myMapper.getAllCZCDYDServiceVersion(type);
+        return tb_czcdydList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateCJDCQJXService", produces = "application/json;charset=utf-8")
+    public TB_CJDCQJX getLastUpdateCJDCQJXService(int type) {//取得最后一次更新的地类图斑服务
+        TB_CJDCQJX tb_cjdcqjx = myMapper.getLastUpdateCJDCQJXService(type);
+        return tb_cjdcqjx;
+    }
+
+    @RequestMapping(value = "getCJDCQJXServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_CJDCQJX getCJDCQJXServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_CJDCQJX tb_cjdcqjx = myMapper.getCJDCQJXServiceByUpdatetime(updatetime, type);
+        return tb_cjdcqjx;
+    }
+
+    @RequestMapping(value = "getAllCJDCQJXServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_CJDCQJX> getAllCJDCQJXServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_CJDCQJX> tb_cjdcqjxList = myMapper.getAllCJDCQJXServiceVersion(type);
+        return tb_cjdcqjxList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateGJGYService", produces = "application/json;charset=utf-8")
+    public TB_GJGY getLastUpdateGJGYService(int type) {//取得最后一次更新的地类图斑服务
+        TB_GJGY tb_gjgy = myMapper.getLastUpdateGJGYService(type);
+        return tb_gjgy;
+    }
+
+    @RequestMapping(value = "getGJGYServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_GJGY getGJGYServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_GJGY tb_gjgy = myMapper.getGJGYServiceByUpdatetime(updatetime, type);
+        return tb_gjgy;
+    }
+
+    @RequestMapping(value = "getAllGJGYServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_GJGY> getAllGJGYServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_GJGY> tb_gjgyList = myMapper.getAllGJGYServiceVersion(type);
+        return tb_gjgyList;
+    }
+
+    @RequestMapping(value = "getLastUpdateKFYQService", produces = "application/json;charset=utf-8")
+    public TB_KFYQ getLastUpdateKFYQService(int type) {//取得最后一次更新的地类图斑服务
+        TB_KFYQ tb_kfyq = myMapper.getLastUpdateKFYQService(type);
+        return tb_kfyq;
+    }
+
+    @RequestMapping(value = "getKFYQServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_KFYQ getKFYQServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_KFYQ tb_kfyq = myMapper.getKFYQServiceByUpdatetime(updatetime, type);
+        return tb_kfyq;
+    }
+
+    @RequestMapping(value = "getAllKFYQServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_KFYQ> getAllKFYQServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_KFYQ> tb_kfyqList = myMapper.getAllKFYQServiceVersion(type);
+        return tb_kfyqList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateLSYDService", produces = "application/json;charset=utf-8")
+    public TB_LSYD getLastUpdateLSYDService(int type) {//取得最后一次更新的地类图斑服务
+        TB_LSYD tb_lsyd = myMapper.getLastUpdateLSYDService(type);
+        return tb_lsyd;
+    }
+
+    @RequestMapping(value = "getLSYDServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_LSYD getLSYDServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_LSYD tb_lsyd = myMapper.getLSYDServiceByUpdatetime(updatetime, type);
+        return tb_lsyd;
+    }
+
+    @RequestMapping(value = "getAllLSYDServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_LSYD> getAllLSYDServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_LSYD> tb_lsydList = myMapper.getAllLSYDServiceVersion(type);
+        return tb_lsydList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdatePDTService", produces = "application/json;charset=utf-8")
+    public TB_PDT getLastUpdatePDTService(int type) {//取得最后一次更新的地类图斑服务
+        TB_PDT tb_pdt = myMapper.getLastUpdatePDTService(type);
+        return tb_pdt;
+    }
+
+    @RequestMapping(value = "getPDTServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_PDT getPDTServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_PDT tb_pdt = myMapper.getPDTServiceByUpdatetime(updatetime, type);
+        return tb_pdt;
+    }
+
+    @RequestMapping(value = "getAllPDTServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_PDT> getAllPDTServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_PDT> tb_pdtList = myMapper.getAllPDTServiceVersion(type);
+        return tb_pdtList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateSDGYService", produces = "application/json;charset=utf-8")
+    public TB_SDGY getLastUpdateSDGYService(int type) {//取得最后一次更新的地类图斑服务
+        TB_SDGY tb_sdgy = myMapper.getLastUpdateSDGYService(type);
+        return tb_sdgy;
+    }
+
+    @RequestMapping(value = "getSDGYServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_SDGY getSDGYServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_SDGY tb_sdgy = myMapper.getSDGYServiceByUpdatetime(updatetime, type);
+        return tb_sdgy;
+    }
+
+    @RequestMapping(value = "getAllSDGYServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_SDGY> getAllSDGYServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_SDGY> tb_sdgyList = myMapper.getAllSDGYServiceVersion(type);
+        return tb_sdgyList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateSLGYService", produces = "application/json;charset=utf-8")
+    public TB_SLGY getLastUpdateSLGYService(int type) {//取得最后一次更新的地类图斑服务
+        TB_SLGY tb_slgy = myMapper.getLastUpdateSLGYService(type);
+        return tb_slgy;
+    }
+
+    @RequestMapping(value = "getSLGYServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_SLGY getSLGYServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_SLGY tb_slgy = myMapper.getSLGYServiceByUpdatetime(updatetime, type);
+        return tb_slgy;
+    }
+
+    @RequestMapping(value = "getAllSLGYServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_SLGY> getAllSLGYServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_SLGY> tb_slgyList = myMapper.getAllSLGYServiceVersion(type);
+        return tb_slgyList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateSTBHHXService", produces = "application/json;charset=utf-8")
+    public TB_STBHHX getLastUpdateSTBHHXService(int type) {//取得最后一次更新的地类图斑服务
+        TB_STBHHX tb_stbhhx = myMapper.getLastUpdateSTBHHXService(type);
+        return tb_stbhhx;
+    }
+
+    @RequestMapping(value = "getSTBHHXServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_STBHHX getSTBHHXServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_STBHHX tb_stbhhx = myMapper.getSTBHHXServiceByUpdatetime(updatetime, type);
+        return tb_stbhhx;
+    }
+
+    @RequestMapping(value = "getAllSTBHHXServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_STBHHX> getAllSTBHHXServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_STBHHX> tb_stbhhxList = myMapper.getAllSTBHHXServiceVersion(type);
+        return tb_stbhhxList;
+    }
+
+
+
+    @RequestMapping(value = "getLastUpdateTTQService", produces = "application/json;charset=utf-8")
+    public TB_TTQ getLastUpdateTTQService(int type) {//取得最后一次更新的地类图斑服务
+        TB_TTQ tb_ttq = myMapper.getLastUpdateTTQService(type);
+        return tb_ttq;
+    }
+
+    @RequestMapping(value = "getTTQServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_TTQ getTTQServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_TTQ tb_ttq = myMapper.getTTQServiceByUpdatetime(updatetime, type);
+        return tb_ttq;
+    }
+
+    @RequestMapping(value = "getAllTTQServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_TTQ> getAllTTQServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_TTQ> tb_ttqList = myMapper.getAllTTQServiceVersion(type);
+        return tb_ttqList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateXZQJXService", produces = "application/json;charset=utf-8")
+    public TB_XZQJX getLastUpdateXZQJXService(int type) {//取得最后一次更新的地类图斑服务
+        TB_XZQJX tb_xzqjx = myMapper.getLastUpdateXZQJXService(type);
+        return tb_xzqjx;
+    }
+
+    @RequestMapping(value = "getXZQJXServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_XZQJX getXZQJXServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_XZQJX tb_xzqjx = myMapper.getXZQJXServiceByUpdatetime(updatetime, type);
+        return tb_xzqjx;
+    }
+
+    @RequestMapping(value = "getAllXZQJXServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_XZQJX> getAllXZQJXServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_XZQJX> tb_xzqjxList = myMapper.getAllXZQJXServiceVersion(type);
+        return tb_xzqjxList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateYJJBNTService", produces = "application/json;charset=utf-8")
+    public TB_YJJBNT getLastUpdateYJJBNTService(int type) {//取得最后一次更新的地类图斑服务
+        TB_YJJBNT tb_yjjbnt = myMapper.getLastUpdateYJJBNTService(type);
+        return tb_yjjbnt;
+    }
+
+    @RequestMapping(value = "getYJJBNTServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_YJJBNT getYJJBNTServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_YJJBNT tb_yjjbnt = myMapper.getYJJBNTServiceByUpdatetime(updatetime, type);
+        return tb_yjjbnt;
+    }
+
+    @RequestMapping(value = "getAllYJJBNTServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_YJJBNT> getAllYJJBNTServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_YJJBNT> tb_yjjbntList = myMapper.getAllYJJBNTServiceVersion(type);
+        return tb_yjjbntList;
+    }
+
+
+    @RequestMapping(value = "getLastUpdateZRBHQService", produces = "application/json;charset=utf-8")
+    public TB_ZRBHQ getLastUpdateZRBHQService(int type) {//取得最后一次更新的地类图斑服务
+        TB_ZRBHQ tb_zrbhq = myMapper.getLastUpdateZRBHQService(type);
+        return tb_zrbhq;
+    }
+
+    @RequestMapping(value = "getZRBHQServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_ZRBHQ getZRBHQServiceByUpdatetime(String updatetime, int type) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_ZRBHQ tb_zrbhq = myMapper.getZRBHQServiceByUpdatetime(updatetime, type);
+        return tb_zrbhq;
+    }
+
+    @RequestMapping(value = "getAllZRBHQServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_ZRBHQ> getAllZRBHQServiceVersion(int type) {//取得所有地类图斑服务版本日期
+        List<TB_ZRBHQ> tb_zrbhqList = myMapper.getAllZRBHQServiceVersion(type);
+        return tb_zrbhqList;
+    }
 
 
 
