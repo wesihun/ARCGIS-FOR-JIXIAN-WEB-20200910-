@@ -807,6 +807,20 @@ public class MyController {
         return tb_physicstable;
     }
 
+    @RequestMapping(value = "getPhysicsServiceByUpdatetime", produces = "application/json;charset=utf-8")
+    public TB_PHYSICSTABLE getPhysicsServiceByUpdatetime(String updatetime, int type,String physicstable) {//根据更新时间取得地类图斑服务
+        if(null==updatetime || "".equals(updatetime)) return null;
+
+        TB_PHYSICSTABLE tb_physicstable = myMapper.getPhysicsServiceByUpdatetime(updatetime, type,physicstable);
+        return tb_physicstable;
+    }
+    @RequestMapping(value = "getAllPhysicsServiceVersion", produces = "application/json;charset=utf-8")
+    public List<TB_PHYSICSTABLE> getAllPhysicsServiceVersion(int type,String physicstable) {//取得所有地类图斑服务版本日期
+        List<TB_PHYSICSTABLE> tb_physicstableList = myMapper.getAllPhysicsServiceVersion(type,physicstable);
+        return tb_physicstableList;
+    }
+
+
 
 
 }

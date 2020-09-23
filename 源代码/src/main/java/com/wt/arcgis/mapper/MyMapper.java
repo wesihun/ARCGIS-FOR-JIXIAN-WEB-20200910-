@@ -269,4 +269,10 @@ public interface MyMapper
     @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from ${physicstable} where run=1 and type=${type} order by updatetime desc limit 0,1 ;")
     public TB_PHYSICSTABLE getLastUpdatephysicstableService( @Param("type")int type, @Param("physicstable")String physicstable);//取得最后一次更新的xx服务physicstable(0动态地图，1要素，2影像)
 
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime,run,createtime from ${physicstable} where run=1 and type=${type} and date_format(updatetime, '%Y-%m-%d' )=#{argupdatetime} order by updatetime desc limit 0,1 ;")
+    public TB_PHYSICSTABLE getPhysicsServiceByUpdatetime(@Param("argupdatetime")String updatetime, @Param("type")int type, @Param("physicstable")String physicstable);//根据更新时间取得自然保护区服务
+
+    @Select("select id,servicename,serviceaddr,databasename,tablename, type, updatetime ,run,createtime from ${physicstable} where run=1 and type=${type};")
+    public List<TB_PHYSICSTABLE> getAllPhysicsServiceVersion( @Param("type")int type,@Param("physicstable")String physicstable);//取得所有自然保护区服务版本日期
+
 }
