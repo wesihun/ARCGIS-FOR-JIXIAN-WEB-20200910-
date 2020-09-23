@@ -797,4 +797,16 @@ public class MyController {
 
 
 
+
+
+
+
+    @RequestMapping(value = "getLastUpdatephysicstableService", produces = "application/json;charset=utf-8")
+    public TB_PHYSICSTABLE getLastUpdatephysicstableService(int type, String physicstable) {//取得最后一次更新的xx服务
+        TB_PHYSICSTABLE tb_physicstable = myMapper.getLastUpdatephysicstableService(type, physicstable);
+        return tb_physicstable;
+    }
+
+
+
 }

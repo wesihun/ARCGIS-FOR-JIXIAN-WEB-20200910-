@@ -14,6 +14,15 @@ public class SpecialMenue//专项调查菜单
     private String shape;
     private List<SpecialMenue> subSpecialMenue;
     private String type;
+    private String physicstable;
+
+    public String getPhysicstable() {
+        return physicstable;
+    }
+
+    public void setPhysicstable(String physicstable) {
+        this.physicstable = physicstable;
+    }
 
     public String getType()
     {
