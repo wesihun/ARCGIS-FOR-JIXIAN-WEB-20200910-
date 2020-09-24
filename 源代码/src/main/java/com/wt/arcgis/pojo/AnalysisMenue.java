@@ -12,6 +12,15 @@ public class AnalysisMenue//统计分析菜单
     private Date createtime;
     private List<AnalysisMenue> subAnalysisMenue;
     private String tablename;
+    private String physicstable;
+
+    public String getPhysicstable() {
+        return physicstable;
+    }
+
+    public void setPhysicstable(String physicstable) {
+        this.physicstable = physicstable;
+    }
 
     public String getTablename()
     {
