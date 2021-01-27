@@ -30,11 +30,11 @@ public interface MyMapper
     @Select("select * from tb_department where parentid=#{1}")
     public List<Department> getSubDepartment(int pid);//根据PID取得子部门
 
-    @Select("select * from tb_menue where parentmenueid is null;")
-    public List<Menue> getRootMenue();//根菜单
+    @Select("select * from ${tableName} where parentmenueid is null;")
+    public List<Menue> getRootMenue(@Param("tableName") String tableName);//根菜单
 
-    @Select("select * from tb_menue where parentmenueid=#{1}")
-    public List<Menue> getSubMenue(int pid);//子菜单
+    @Select("select * from ${tableName} where parentmenueid=#{pid}")
+    public List<Menue> getSubMenue(@Param("pid") int pid, @Param("tableName") String tableName);//子菜单
 
     @Select("select * from tb_role ")
     public List<Role> getRole();
@@ -48,8 +48,8 @@ public interface MyMapper
     @Insert("insert into tb_user_role(roleid,userid) values(#{role.roleid},#{userid}) ")
     public int insertUserRole(User user);//用户角色中间表
 
-    @Select("select * from tb_menue where menueid=#{menueid}")
-    public Menue getMenueByMenueId(Menue menue);
+    @Select("select * from ${tableName} where menueid=#{menueid}")
+    public Menue getMenueByMenueId(@Param("menueid") int menueid, @Param("tableName") String tableName);
 
     @Select("select * from tb_addressinfo where ParentId=0" )
     public List<Administration> getRootAdministration();

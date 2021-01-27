@@ -98,15 +98,19 @@ public class MyController {
     }
 
     @RequestMapping(value = "getMenue", produces = "application/json;charset=utf-8")
-    public List<Menue> getMenue() {// 取得菜单
+    public List<Menue> getMenue(String version) {// 取得菜单
+        if(null == version || "".equals(version)) return null;
         List<Menue> root = new ArrayList<Menue>();
 
-        List<Menue> listMenue = myMapper.getRootMenue();
+        String tableName = "tb_menue";
+        if(version.equals("二调")) {tableName = "tb_menue_ed";}
+
+        List<Menue> listMenue = myMapper.getRootMenue(tableName);
 
         for (int i = 0; i < listMenue.size(); i++) {
             Menue rootMenue = listMenue.get(i);
 
-            rootMenue.setSubMenue(this.getSubMenue(rootMenue));
+            rootMenue.setSubMenue(this.getSubMenue(rootMenue, tableName));
 
             root.add(rootMenue);
         }
@@ -114,9 +118,9 @@ public class MyController {
         return root;
     }
 
-    public List<Menue> getSubMenue(Menue rootMenue) {// 递归菜单
+    public List<Menue> getSubMenue(Menue rootMenue, String tableName) {// 递归菜单
         List<Menue> subMenueList = new ArrayList<Menue>();
-        List<Menue> subList = myMapper.getSubMenue(rootMenue.getMenueid());
+        List<Menue> subList = myMapper.getSubMenue(rootMenue.getMenueid(), tableName);
 
         if (subList == null) {
             return null;
@@ -125,7 +129,7 @@ public class MyController {
             for (int i = 0; i < subList.size(); i++) {
                 Menue subMenue = subList.get(i);
 
-                subMenue.setSubMenue(this.getSubMenue(subMenue));
+                subMenue.setSubMenue(this.getSubMenue(subMenue, tableName));
                 subMenueList.add(subMenue);
             }
         }
@@ -266,15 +270,25 @@ public class MyController {
     }
 
     @RequestMapping(value = "getSecondCategory", produces = "application/json;charset=utf-8")
-    public List<Menue> getSecondCategory(Menue menue){//取得目录树点击的二级地类编码
-        List<Menue> menueList = this.getSubMenue(menue);
+    public List<Menue> getSecondCategory(Menue menue, String version){//取得目录树点击的二级地类编码
+        if(null == version || "".equals(version)) return null;
+
+        String tableName = "tb_menue";
+        if(version.equals("二调")) {tableName = "tb_menue_ed";}
+
+        List<Menue> menueList = this.getSubMenue(menue, tableName);
 
         return menueList;
     }
 
     @RequestMapping(value = "getMenueByMenueId", produces = "application/json;charset=utf-8")
-    public Menue getMenueByMenueId(Menue menue){//根据menueid取得menue
-        Menue resultMenue = myMapper.getMenueByMenueId(menue);
+    public Menue getMenueByMenueId(int menueid, String version){//根据menueid取得menue
+        if(null == version || "".equals(version)) return null;
+
+        String tableName = "tb_menue";
+        if(version.equals("二调")) {tableName = "tb_menue_ed";}
+
+        Menue resultMenue = myMapper.getMenueByMenueId(menueid, tableName);
 
         return resultMenue;
     }
