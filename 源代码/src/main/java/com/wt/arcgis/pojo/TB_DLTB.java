@@ -12,6 +12,15 @@ public class TB_DLTB {//地类图斑表（记录服务更新的版本和地址�
     private int run;
     private Date createtime;
     private String version;
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public String getVersion() {
         return version;

@@ -11,7 +11,15 @@ public class TB_PHYSICSTABLE {//通用的物理表结构（记录服务更新的
     private Date updatetime;
     private int run;
     private Date createtime;
+    private String title;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
     public int getId() {
         return id;
     }

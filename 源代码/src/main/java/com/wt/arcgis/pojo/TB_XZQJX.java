@@ -11,7 +11,15 @@ public class TB_XZQJX {//行政区表（记录服务更新的版本和地址以T
     private Date updatetime;
     private int run;
     private Date createtime;
+    private String title;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
     public int getId() {
         return id;
     }
